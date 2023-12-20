@@ -85,37 +85,34 @@ export const riceCooker = {
 
 export function simulateRiceCooker() {
   let input;
-  const condition = true;
+  displayMenu();
+  input = prompt("Enter your choice: ");
 
-  while (condition) {
-    displayMenu();
-    input = prompt("Enter your choice: ");
-
-    switch (input || "0") {
-      case "1":
-        riceCooker.addRice();
-        break;
-      case "2":
-        riceCooker.cookRice();
-        break;
-      case "3":
-        riceCooker.steam();
-        break;
-      case "4":
-        riceCooker.keepWarm();
-        break;
-      case "5":
-        riceCooker.removeRice();
-        break;
-      case "6":
-        console.log("Thank you for using the Rice Cooker Simulator. Goodbye!");
-        return;
-      case "0":
-        console.log("No input provided.");
-      default:
-        console.log("Invalid input. Please enter a valid number.");
-    }
+  switch (input || "0") {
+    case "1":
+      riceCooker.addRice();
+      break;
+    case "2":
+      riceCooker.cookRice();
+      break;
+    case "3":
+      riceCooker.steam();
+      break;
+    case "4":
+      riceCooker.keepWarm();
+      break;
+    case "5":
+      riceCooker.removeRice();
+      break;
+    case "6":
+      console.log("Thank you for using the Rice Cooker Simulator. Goodbye!");
+      return;
+    case "0":
+      console.log("No input provided.");
+    default:
+      console.log("Invalid input. Please enter a valid number.");
   }
+  return simulateRiceCooker();
 }
 
 simulateRiceCooker();
